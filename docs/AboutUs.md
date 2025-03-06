@@ -39,12 +39,13 @@ Please contact heytheresakinah@gmail.com for any concerns and queries.
 * Role: Documentation
 * Responsibilities: Responsible for the quality of various project documents.
 
-### Jean Doe
+### Yin Can
 
-<img src="images/johndoe.png" width="200px">
+<img src="images/ypuppy.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](http://github.com/ypuppy)]
+[[portfolio](team/ypuppy.md)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Backend + waiting for my team member to save me 
+
