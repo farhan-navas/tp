@@ -60,20 +60,19 @@ public class AddCommand extends Command {
         return new CommandResult(String.format(MESSAGE_SUCCESS, Messages.format(toAdd)));
     }
 
-    @SuppressWarnings("checkstyle:CommentsIndentation")
     @Override
     public boolean equals(Object other) {
-//        if (other == this) {
-//            return true;
-//        }
-//
-//        // instanceof handles nulls
-//        if (!(other instanceof AddCommand)) {
-//            return false;
-//        }
-//
-//        AddCommand otherAddCommand = (AddCommand) other;
-//        return toAdd.equals(otherAddCommand.toAdd);
+        //        if (other == this) {
+        //            return true;
+        //        }
+        //
+        //        // instanceof handles nulls
+        //        if (!(other instanceof AddCommand)) {
+        //            return false;
+        //        }
+        //
+        //        AddCommand otherAddCommand = (AddCommand) other;
+        //        return toAdd.equals(otherAddCommand.toAdd);
         return other == this || (other instanceof AddCommand && toAdd.equals(((AddCommand) other).toAdd));
     }
 
