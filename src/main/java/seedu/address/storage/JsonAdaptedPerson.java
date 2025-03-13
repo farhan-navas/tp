@@ -57,7 +57,8 @@ class JsonAdaptedPerson {
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
-    }// update this if new component is added to addCommand
+    }
+    // update this if new component is added to addCommand
 
     /**
      * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.
