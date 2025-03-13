@@ -12,6 +12,7 @@ import static seedu.address.testutil.Assert.assertThrows;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -125,4 +126,15 @@ public class CommandTestUtil {
         assertEquals(1, model.getFilteredPersonList().size());
     }
 
+    /**
+     * Updates {@code model}'s filtered list to show only the persons at the given {@code indices}
+     * in the {@code model}'s address book.
+     */
+    public static void showPersonsAtIndices(Model model, Index... indices) {
+        List<Person> filteredPersons = Arrays.stream(indices)
+                .map(index -> model.getFilteredPersonList().get(index.getZeroBased()))
+                .collect(Collectors.toList());
+        model.updateFilteredPersonList(filteredPersons::contains);
+        assertTrue(model.getFilteredPersonList().size() >= indices.length);
+    }
 }
