@@ -126,6 +126,10 @@ public class CommandTestUtil {
         assertEquals(1, model.getFilteredPersonList().size());
     }
 
+    /**
+     * Updates {@code model}'s filtered list to show only the persons at the given {@code indices}
+     * in the {@code model}'s address book.
+     */
     public static void showPersonsAtIndices(Model model, Index... indices) {
         List<Person> filteredPersons = Arrays.stream(indices)
                 .map(index -> model.getFilteredPersonList().get(index.getZeroBased()))
