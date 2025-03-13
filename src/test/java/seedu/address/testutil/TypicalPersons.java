@@ -42,7 +42,7 @@ public class TypicalPersons {
     public static final Person GEORGE = new PersonBuilder().withName("George Best").withPhone("9482442")
             .withEmail("anna@example.com").withAddress("4th street").build();
     public static final Person NEW_TSET_PERSON = new PersonBuilder().withName("name")
-            .withAddress("123, NUS Ave 6, #08-111").withEmail("tset@example.com")
+            .withAddress("123, NUS Ave 6, #08-111").withEmail("test@example.com")
             .withPhone("12345678")
             .withTags("test").build();
     //new test person to test the new add command that has extra component.
