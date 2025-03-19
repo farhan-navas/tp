@@ -4,15 +4,13 @@ import static java.util.Objects.requireNonNull;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
+import seedu.address.model.person.*;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -21,7 +19,7 @@ import seedu.address.model.tag.Tag;
 public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
-
+    private static final int NUM_GRADES = 6;
     /**
      * Parses {@code oneBasedIndex} into an {@code Index} and returns it. Leading and trailing whitespaces will be
      * trimmed.
@@ -121,4 +119,30 @@ public class ParserUtil {
         }
         return tagSet;
     }
+
+    public static Grade[] parseGrades(String gradeString) throws ParseException {
+        requireNonNull(gradeString);
+        String trimmedGrades = gradeString.trim();
+        String[] gradePairs = trimmedGrades.split(",");
+
+        if (gradePairs.length != NUM_GRADES) {
+            throw new ParseException("Exactly 6 subject-grade pairs are required");
+        }
+
+        Grade[] grades = new Grade[NUM_GRADES];
+        for (int i = 0; i < NUM_GRADES; i++) {
+            String[] parts = gradePairs[i].split(":");
+            if (parts.length != 2) {
+                throw new ParseException(Grade.MESSAGE_CONSTRAINTS);
+            }
+            String subject = parts[0].trim();
+            String grade = parts[1].trim();
+            if (!Grade.isValidGrade(subject, grade)) {
+                throw new ParseException(Grade.MESSAGE_CONSTRAINTS);
+            }
+            grades[i] = new Grade(subject, grade);
+        }
+        return grades;
+    }
+
 }

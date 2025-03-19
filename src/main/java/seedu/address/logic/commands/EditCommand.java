@@ -6,14 +6,10 @@ import static seedu.address.logic.parser.CliSyntax.PREFIX_EMAIL;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_PHONE;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_TAG;
+import static seedu.address.logic.parser.CliSyntax.PREFIX_GRADE;
 import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.CollectionUtil;
@@ -21,11 +17,7 @@ import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Person;
-import seedu.address.model.person.Phone;
+import seedu.address.model.person.*;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -43,6 +35,7 @@ public class EditCommand extends Command {
             + "[" + PREFIX_PHONE + "PHONE] "
             + "[" + PREFIX_EMAIL + "EMAIL] "
             + "[" + PREFIX_ADDRESS + "ADDRESS] "
+            + "[" + PREFIX_GRADE + "subject1:grade1,subject2:grade2,subject3:grade3,subject4:grade4,subject5:grade5,subject6:grade6] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
@@ -99,9 +92,10 @@ public class EditCommand extends Command {
         Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
         Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
+        Grade[] updatedGrades = editPersonDescriptor.getGrades().orElse(personToEdit.getGrades());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
+        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedGrades, updatedTags);
     }
 
     @Override
@@ -137,6 +131,7 @@ public class EditCommand extends Command {
         private Phone phone;
         private Email email;
         private Address address;
+        private Grade[] grades;
         private Set<Tag> tags;
 
         public EditPersonDescriptor() {}
@@ -150,16 +145,28 @@ public class EditCommand extends Command {
             setPhone(toCopy.phone);
             setEmail(toCopy.email);
             setAddress(toCopy.address);
+            setGrades(toCopy.grades);
             setTags(toCopy.tags);
         }
+
+
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags);
+            return CollectionUtil.isAnyNonNull(name, phone, email, address,grades,tags);
         }
 
+        /**
+         * Sets the grades for this EditPersonDescriptor.
+         *
+         * @param grades An array of Grade objects to be set.
+         *               If the input is null, the grades field will be set to null.
+         */
+        public void setGrades(Grade[] grades) {
+            this.grades = grades;
+        }
         public void setName(Name name) {
             this.name = name;
         }
@@ -209,6 +216,17 @@ public class EditCommand extends Command {
             return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
         }
 
+        /**
+         * Returns an Optional containing a defensive copy of the grades array.
+         * Returns {@code Optional#empty()} if {@code grades} is null.
+         * The defensive copy prevents external modification of the internal grades array.
+         *
+         * @return an {@code Optional<Grade[]>} containing a copy of the grades array, or empty if grades is null
+         */
+        public Optional<Grade[]> getGrades() {
+            return grades == null ? Optional.empty() : Optional.of(grades.clone());
+        }
+
         @Override
         public boolean equals(Object other) {
             if (other == this) {
@@ -225,6 +243,7 @@ public class EditCommand extends Command {
                     && Objects.equals(phone, otherEditPersonDescriptor.phone)
                     && Objects.equals(email, otherEditPersonDescriptor.email)
                     && Objects.equals(address, otherEditPersonDescriptor.address)
+                    && Arrays.equals(grades, otherEditPersonDescriptor.grades)
                     && Objects.equals(tags, otherEditPersonDescriptor.tags);
         }
 
@@ -235,8 +254,11 @@ public class EditCommand extends Command {
                     .add("phone", phone)
                     .add("email", email)
                     .add("address", address)
+                    .add("grades", grades)
                     .add("tags", tags)
                     .toString();
         }
+
+
     }
 }
