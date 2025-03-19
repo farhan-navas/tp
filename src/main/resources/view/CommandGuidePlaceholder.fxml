@@ -4,7 +4,8 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
-<VBox id="commandGuide" fx:id="commandGuide" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_LEFT" >
+<VBox id="commandGuide" fx:id="commandGuide" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      alignment="TOP_LEFT" HBox.hgrow="ALWAYS">
     <GridPane VBox.vgrow="ALWAYS">
         <padding>
             <Insets top="5" right="5" bottom="5" left="15" />
@@ -16,8 +17,15 @@
                     <Region fx:constant="USE_PREF_SIZE" />
                 </minWidth>
             </Label>
-            <Label fx:id="commandGuideDescription" styleClass="cell_big_label" />
-            <Label fx:id="commandGuideExample" styleClass="cell_small_label" />
+            <Label fx:id="commandGuideDescription" styleClass="cell_big_label" text="\$first" />
+            <Label fx:id="addCommand" styleClass="cell_small_label" text="\$addCommand" />
+            <Label fx:id="clearCommand" styleClass="cell_small_label" text="\$clearCommand" />
+            <Label fx:id="deleteCommand" styleClass="cell_small_label" text="\$deleteCommand" />
+            <Label fx:id="editCommand" styleClass="cell_small_label" text="\$editCommand" />
+            <Label fx:id="exitCommand" styleClass="cell_small_label" text="\$exitCommand" />
+            <Label fx:id="findCommand" styleClass="cell_small_label" text="\$findCommand" />
+            <Label fx:id="helpCommand" styleClass="cell_small_label" text="\$helpCommand" />
+            <Label fx:id="listCommand" styleClass="cell_small_label" text="\$listCommand" />
         </VBox>
     </GridPane>
 </VBox>

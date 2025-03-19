@@ -8,8 +8,10 @@ import javafx.scene.layout.VBox;
 /**
  * Command guide component that is displayed on the left hand side of the main window.
  */
-public class CommandGuidePlaceholder extends UiPart<Region> {
+public class CommandGuidePanel extends UiPart<Region> {
     private static final String FXML = "CommandGuidePlaceholder.fxml";
+    private static final String COMMAND_GUIDE_TITLE = "Command Guide";
+    private static final String COMMAND_GUIDE_DESCRIPTION = "These are the list of commands available in the application.";
     private static final String ADD_COMMAND = "Add a person: add n/NAME p/PHONE e/EMAIL a/ADDRESS t/TAG";
     private static final String CLEAR_COMMAND = "Clear all persons: clear";
     private static final String DELETE_COMMAND = "Delete a person: delete INDEX";
@@ -23,7 +25,13 @@ public class CommandGuidePlaceholder extends UiPart<Region> {
     private VBox commandGuidePlaceholder;
 
     @FXML
-    private Label addComand;
+    private Label commandGuideTitle;
+
+    @FXML
+    private Label commandGuideDescription;
+
+    @FXML
+    private Label addCommand;
 
     @FXML
     private Label clearCommand;
@@ -49,9 +57,11 @@ public class CommandGuidePlaceholder extends UiPart<Region> {
     /**
      * Creates a {@code CommandGuidePlaceholder} with hardcoded commands.
      */
-    public CommandGuidePlaceholder() {
+    public CommandGuidePanel() {
         super(FXML);
-        addComand.setText(ADD_COMMAND);
+        commandGuideTitle.setText(COMMAND_GUIDE_TITLE);
+        commandGuideDescription.setText(COMMAND_GUIDE_DESCRIPTION);
+        addCommand.setText(ADD_COMMAND);
         clearCommand.setText(CLEAR_COMMAND);
         deleteCommand.setText(DELETE_COMMAND);
         editCommand.setText(EDIT_COMMAND);
