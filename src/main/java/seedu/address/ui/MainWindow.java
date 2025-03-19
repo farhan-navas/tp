@@ -34,6 +34,7 @@ public class MainWindow extends UiPart<Stage> {
     private PersonListPanel personListPanel;
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
+    private CommandGuidePlaceholder commandGuidePlaceholder;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -121,6 +122,9 @@ public class MainWindow extends UiPart<Stage> {
 
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
+
+        CommandGuidePlaceholder commandGuidePlaceholder = new CommandGuidePlaceholder();
+        commandBoxPlaceholder.getChildren().add(commandGuidePlaceholder.getRoot());
     }
 
     /**

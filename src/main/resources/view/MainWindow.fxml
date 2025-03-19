@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.HBox?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
          title="JCRoster+ App" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
   <icons>
@@ -23,38 +24,63 @@
         <URL value="@Extensions.css" />
       </stylesheets>
 
-      <VBox>
-        <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
-          <Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
-          </Menu>
-        </MenuBar>
-
-        <StackPane VBox.vgrow="NEVER" fx:id="commandBoxPlaceholder" styleClass="pane-with-border">
-          <padding>
-            <Insets top="5" right="10" bottom="5" left="10" />
-          </padding>
-        </StackPane>
-
-        <StackPane VBox.vgrow="NEVER" fx:id="resultDisplayPlaceholder" styleClass="pane-with-border"
-                   minHeight="100" prefHeight="100" maxHeight="100">
-          <padding>
-            <Insets top="5" right="10" bottom="5" left="10" />
-          </padding>
-        </StackPane>
-
-        <VBox fx:id="personList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
+      <HBox HBox.hgrow="ALWAYS">
+        <!-- Command Guide component that tells users what are all the possible components -->
+        <StackPane fx:id="commandGuidePlaceholder" styleClass="pane-with-border" HBox.hgrow="ALWAYS"
+                   minWidth="100" prefWidth="100" maxWidth="100">
           <padding>
             <Insets top="10" right="10" bottom="10" left="10" />
           </padding>
-          <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+        </StackPane>
+
+        <VBox VBox.vgrow="ALWAYS">
+          <!-- Top Menu bar that contains the File and Help Button -->
+          <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+            <Menu mnemonicParsing="false" text="File">
+              <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+              <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
+            </Menu>
+          </MenuBar>
+
+          <VBox VBox.vgrow="ALWAYS">
+          <!-- Person List component, where you display list of all current people -->
+            <VBox fx:id="personList" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
+              <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+              </padding>
+              <StackPane fx:id="personListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <!-- Result display component, where command result string is shown -->
+            <StackPane VBox.vgrow="NEVER" fx:id="resultDisplayPlaceholder" styleClass="pane-with-border"
+                       minHeight="100" prefHeight="100" maxHeight="100">
+              <padding>
+                <Insets top="5" right="10" bottom="5" left="10" />
+              </padding>
+            </StackPane>
+
+            <!-- Command Box component, where you input commands -->
+            <StackPane VBox.vgrow="NEVER" fx:id="commandBoxPlaceholder" styleClass="pane-with-border">
+              <padding>
+                <Insets top="10" right="10" bottom="10" left="10" />
+              </padding>
+            </StackPane>
+          </VBox>
+
+          <!-- Bottom statusbar for the app, just shows app location -> ./data/addressbook... -->
+          <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
         </VBox>
 
-        <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
-      </VBox>
+        <!-- Person Display component, where you display the details of a person -->
+        <StackPane fx:id="personDisplayPlaceholder" styleClass="pane-with-border" HBox.hgrow="ALWAYS"
+                   VBox.vgrow="ALWAYS" minWidth="100" minHeight="100">
+          <padding>
+            <Insets top="10" right="10" bottom="10" left="10" />
+          </padding>
+        </StackPane>
+      </HBox>
     </Scene>
   </scene>
 </fx:root>
