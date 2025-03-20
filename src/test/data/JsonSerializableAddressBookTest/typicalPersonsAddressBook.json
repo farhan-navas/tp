@@ -103,6 +103,14 @@
     "phone" : "96778766",
     "email" : "emily@example.com",
     "address" : "someplace",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ "enemy" ]
 
   }, {
