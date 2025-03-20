@@ -6,6 +6,14 @@
     "email" : "alice@example.com",
     "address" : "123, Jurong West Ave 6, #08-111",
     "remark" : "She likes cats.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ "friends" ]
   }, {
     "name" : "Benson Meier",
@@ -13,6 +21,14 @@
     "email" : "johnd@example.com",
     "address" : "311, Clementi Ave 2, #02-25",
     "remark" : "He can't sing!",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Carl Kurz",
@@ -20,6 +36,14 @@
     "email" : "heinz@example.com",
     "address" : "wall street",
     "remark" : "He loves ice cream.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ ]
   }, {
     "name" : "Daniel Meier",
@@ -27,6 +51,14 @@
     "email" : "cornelia@example.com",
     "address" : "10th street",
     "remark" : "He runs fast.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ "friends" ]
   }, {
     "name" : "Elle Meyer",
@@ -34,6 +66,14 @@
     "email" : "werner@example.com",
     "address" : "michegan ave",
     "remark" : "She can dance.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ ]
   }, {
     "name" : "Fiona Kunz",
@@ -41,6 +81,14 @@
     "email" : "lydia@example.com",
     "address" : "little tokyo",
     "remark" : "She's a vegetarian.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ ]
   }, {
     "name" : "George Best",
@@ -48,6 +96,14 @@
     "email" : "anna@example.com",
     "address" : "4th street",
     "remark" : "He's a vegan.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ ]
   }, {
     "name" : "Emily",
@@ -55,6 +111,14 @@
     "email" : "emily@example.com",
     "address" : "someplace",
     "remark" : "She is beautiful.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ "enemy" ]
 
   }, {
@@ -63,6 +127,14 @@
     "email" : "test@example.com",
     "address" : "123, NUS Ave 6, #08-111",
     "remark" : "She draws well.",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags" : [ "test" ]
 
   } ]

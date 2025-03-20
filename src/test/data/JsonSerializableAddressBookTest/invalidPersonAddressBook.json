@@ -4,6 +4,15 @@
     "phone": "9482424",
     "email": "invalid@email!3e",
     "address": "4th street",
-    "remark" : "He can't take beer!"
+    "remark" : "He can't take beer!",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "G"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
+    "address": "4th street"
   } ]
 }
