@@ -6,7 +6,7 @@
 # JCRoster+
 #### JCRoster+ streamlines contact management for Junior College homeroom teachers.
 
-* by providing quick access to student, and guardian details. 
+* by providing quick access to student, and guardian details.
 * By integrating a smart tagging system it allows for quick categorization and seamless student grouping based on academic strengths.
 * Ultimately, it reduces administrative hassle and improves efficiency in managing classroom interactions.
 
@@ -46,4 +46,3 @@ Example command:
 
 **More features coming up...**
 * For the detailed documentation of this project, see the **[JCRosters](https://ay2425s2-cs2103t-t15-2.github.io/tp/)**.
-

@@ -339,7 +339,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a1. JCRoster+ shows an error message: "Numbers and special characters are not allowed."
 
       Use case resumes at step 1.
-      
 * 2b. User enters an invalid phone number (not numeric or outside 7-15 digits).
 
     * 2b1. JCRoster+ shows an error message: "Phone number must contain only digits and be between 7 to 15 digits long."
@@ -351,13 +350,12 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2c1. JCRoster+ shows an error message: "Invalid email format. Please enter a valid email (e.g., johndoe@example.com)."
 
       Use case resumes at step 1.
-      
 * 2d. User enters an invalid address (contains unsupported special characters).
 
     * 2d1. JCRoster+ shows an error message: "Invalid address format. Only letters, numbers, and basic punctuation are allowed."
 
       Use case resumes at step 1.
-      
+ 
 * 3a. A person with the same phone number already exists.
     * 3a1. JCRoster+ shows an error message: "A person with this phone number already exists."
 
@@ -381,11 +379,9 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
     * 2a1. JCRoster+ shows an error message: "Numbers and special characters are not allowed."
 
       Use case resumes at step 1.
-      
 * 3a. No matches are found.
 
     * 3a1. JCRoster+ shows an error message: "No matches found. Try another name!"
-
       Use case resumes at step 1.
 
 *{More to be added}*

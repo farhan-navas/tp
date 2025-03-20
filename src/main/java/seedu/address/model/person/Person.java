@@ -2,6 +2,7 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
@@ -15,7 +16,7 @@ import seedu.address.model.tag.Tag;
  * Guarantees: details are present and not null, field values are validated, immutable.
  */
 public class Person {
-
+    private static final int NUM_GRADES = 6;
     // Identity fields
     private final Name name;
     private final Phone phone;
@@ -24,17 +25,25 @@ public class Person {
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
+    private final Grade[] grades;
+
 
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, address, tags);
+    public Person(Name name, Phone phone, Email email, Address address, Grade[] grades, Set<Tag> tags) {
+        requireAllNonNull(name, phone, email, address, tags, grades);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.grades = grades.clone();
         this.tags.addAll(tags);
+
+    }
+
+    public Grade[] getGrades() {
+        return grades.clone();
     }
 
     public Name getName() {
@@ -94,13 +103,14 @@ public class Person {
                 && phone.equals(otherPerson.phone)
                 && email.equals(otherPerson.email)
                 && address.equals(otherPerson.address)
-                && tags.equals(otherPerson.tags);
+                && tags.equals(otherPerson.tags)
+                && Arrays.equals(grades, otherPerson.grades);
     }
 
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, phone, email, address, tags);
+        return Objects.hash(name, phone, email, address, Arrays.hashCode(grades), tags);
     }
 
     @Override
@@ -110,6 +120,7 @@ public class Person {
                 .add("phone", phone)
                 .add("email", email)
                 .add("address", address)
+                .add("grades", Arrays.toString(grades))
                 .add("tags", tags)
                 .toString();
     }
