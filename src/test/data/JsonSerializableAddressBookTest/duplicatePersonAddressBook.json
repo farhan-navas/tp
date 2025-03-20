@@ -4,11 +4,27 @@
     "phone": "94351253",
     "email": "alice@example.com",
     "address": "123, Jurong West Ave 6, #08-111",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "tags": [ "friends" ]
   }, {
     "name": "Alice Pauline",
     "phone": "94351253",
     "email": "pauline@example.com",
+    "grades" : [
+      {"subject": "Math", "grade": "A"},
+      {"subject": "Science", "grade": "B"},
+      {"subject": "English", "grade": "A"},
+      {"subject": "History", "grade": "C"},
+      {"subject": "Geography", "grade": "B"},
+      {"subject": "Music", "grade": "A"}
+    ],
     "address": "4th street"
   } ]
 }
