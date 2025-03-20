@@ -47,7 +47,7 @@ class JsonAdaptedPerson {
         if (tags != null) {
             this.tags.addAll(tags);
         }
-    }
+    } // update this if new component is added to addCommand
 
     /**
      * Converts a given {@code Person} into this class for Jackson use.
@@ -62,6 +62,7 @@ class JsonAdaptedPerson {
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
     }
+    // update this if new component is added to addCommand
 
     /**
      * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.

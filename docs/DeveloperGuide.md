@@ -4,7 +4,7 @@
   pageNav: 3
 ---
 
-# AB-3 Developer Guide
+# JCRoster+ Developer Guide
 
 <!-- * Table of Contents -->
 <page-nav-print />
@@ -272,15 +272,14 @@ _{Explain here how the data archiving feature will be implemented}_
 
 ### Product scope
 
-**Target user profile**:
+**Target user profile**: Junior College Homeroom Teacher
 
-* has a need to manage a significant number of contacts
-* prefer desktop apps over other types
-* can type fast
-* prefers typing to mouse interactions
-* is reasonably comfortable using CLI apps
+**Value proposition**:
 
-**Value proposition**: manage contacts faster than a typical mouse/GUI driven app
+* Efficient Contact Management: Provides quick access to student, teacher, and guardian details for Junior College homeroom teachers.
+* Smart Tagging System: Enables quick categorization and seamless student grouping based on academic strengths.
+* Administrative Convenience: Reduces the hassle of managing student information and classroom interactions.
+* Improved Efficiency: Streamlines administrative tasks, allowing teachers to focus more on student engagement.
 
 
 ### User stories
@@ -289,41 +288,105 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 | Priority | As a …​                                    | I want to …​                 | So that I can…​                                                        |
 |----------|--------------------------------------------|------------------------------|------------------------------------------------------------------------|
-| `* * *`  | new user                                   | see usage instructions       | refer to instructions when I forget how to use the App                 |
-| `* * *`  | user                                       | add a new person             |                                                                        |
-| `* * *`  | user                                       | delete a person              | remove entries that I no longer need                                   |
-| `* * *`  | user                                       | find a person by name        | locate details of persons without having to go through the entire list |
-| `* *`    | user                                       | hide private contact details | minimize chance of someone else seeing them by accident                |
-| `*`      | user with many persons in the address book | sort persons by name         | locate a person easily                                                 |
+| `* * *`  | JC Homeroom Teacher                                   | search for a student by name       | quickly retrieve their information                 |
+| `* * *`  | JC Homeroom Teacher                                       | add a new contact             | keep track of their contact details efficiently                                                                       |
+| `* * *`  | JC Homeroom Teacher                                       | delete a contact              | remove entries that I no longer need                                   |
+| `* * *`  | JC Homeroom Teacher                                       | exit the program        | close the application when I am done using it |
 
 *{More to be added}*
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `JCRoster+` and the **Actor** is the `JC Homeroom Teacher`, unless specified otherwise)
 
 **Use case: Delete a person**
 
 **MSS**
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  JCRoster+ shows a list of persons
+2.  User requests to delete a specific person in the list
+3.  AddressBook deletes the person
 
     Use case ends.
 
 **Extensions**
 
-* 2a. The list is empty.
+* 1a. The list is empty.
 
   Use case ends.
 
-* 3a. The given index is invalid.
+* 2a. The given index is invalid.
 
-    * 3a1. AddressBook shows an error message.
+    * 2a1. AddressBook shows an error message.
 
-      Use case resumes at step 2.
+      Use case resumes at step 1.
+
+**Use case: Add a person**
+
+**MSS**
+
+1. JCRoster+ prompts the user to enter student details (name, phone number, email, address, and optional tags).
+2. User enters the details in the specified format.
+3. JCRoster+ validates the input.
+4.JCRoster+ adds the person to the address book and displays a success message.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. User enters an invalid name (contains numbers or special characters).
+
+    * 2a1. JCRoster+ shows an error message: "Numbers and special characters are not allowed."
+
+      Use case resumes at step 1.
+      
+* 2b. User enters an invalid phone number (not numeric or outside 7-15 digits).
+
+    * 2b1. JCRoster+ shows an error message: "Phone number must contain only digits and be between 7 to 15 digits long."
+
+      Use case resumes at step 1.
+
+* 2c. User enters an invalid email (incorrect format).
+
+    * 2c1. JCRoster+ shows an error message: "Invalid email format. Please enter a valid email (e.g., johndoe@example.com)."
+
+      Use case resumes at step 1.
+      
+* 2d. User enters an invalid address (contains unsupported special characters).
+
+    * 2d1. JCRoster+ shows an error message: "Invalid address format. Only letters, numbers, and basic punctuation are allowed."
+
+      Use case resumes at step 1.
+      
+* 3a. A person with the same phone number already exists.
+    * 3a1. JCRoster+ shows an error message: "A person with this phone number already exists."
+
+      Use case resumes at step 1.
+
+**Use case: Find a person**
+
+**MSS**
+
+1. JCRoster+ prompts the user to enter a name or keyword to search.
+2. User enters the search query.
+3. JCRoster+ searches the address book for matching names.
+4. JCRoster+ displays a list of matching persons, if found.
+
+    Use case ends.
+
+**Extensions**
+
+* 2a. User enters an invalid name (contains numbers or special characters).
+
+    * 2a1. JCRoster+ shows an error message: "Numbers and special characters are not allowed."
+
+      Use case resumes at step 1.
+      
+* 3a. No matches are found.
+
+    * 3a1. JCRoster+ shows an error message: "No matches found. Try another name!"
+
+      Use case resumes at step 1.
 
 *{More to be added}*
 
@@ -332,13 +395,17 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 1.  Should work on any _mainstream OS_ as long as it has Java `17` or above installed.
 2.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
 3.  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
+4. Should handle unexpected user inputs/system crashes gracefully by providing helpful error messages and not losing data.
+5. Software should work without requiring an installer. 
+6. Data should be stored in a format that is easy to read and edit manually, in case the user wants to do so.
 
 *{More to be added}*
 
 ### Glossary
 
 * **Mainstream OS**: Windows, Linux, Unix, MacOS
-* **Private contact detail**: A contact detail that is not meant to be shared with others
+* **JC Homeroom Teacher**: Singapore Junior College Homeroom/Form Teachers
+* **Student contact details**: Refers to name, email, phone number, address
 
 --------------------------------------------------------------------------------------------------------------------
 
