@@ -10,6 +10,7 @@ import seedu.address.model.person.Grade;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Remark;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -22,6 +23,7 @@ public class PersonBuilder {
     public static final String DEFAULT_PHONE = "85355255";
     public static final String DEFAULT_EMAIL = "amy@gmail.com";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_REMARK = "";
     public static final String DEFAULT_GRADES = "Math:A,Science:B,English:A,History:C,Geography:B,Music:A";
 
 
@@ -29,6 +31,7 @@ public class PersonBuilder {
     private Phone phone;
     private Email email;
     private Address address;
+    private Remark remark;
     private Set<Tag> tags;
     private Grade[] grades;
 
@@ -40,6 +43,7 @@ public class PersonBuilder {
         phone = new Phone(DEFAULT_PHONE);
         email = new Email(DEFAULT_EMAIL);
         address = new Address(DEFAULT_ADDRESS);
+        remark = new Remark(DEFAULT_REMARK);
         grades = Arrays.stream(DEFAULT_GRADES.split(","))
                 .map(Grade::new)
                 .toArray(Grade[]::new);
@@ -54,6 +58,7 @@ public class PersonBuilder {
         phone = personToCopy.getPhone();
         email = personToCopy.getEmail();
         address = personToCopy.getAddress();
+        remark = personToCopy.getRemark();
         grades = personToCopy.getGrades();
         tags = new HashSet<>(personToCopy.getTags());
     }
@@ -99,12 +104,20 @@ public class PersonBuilder {
     }
 
     /**
+     * Sets the {@code Remark} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withRemark(String remark) {
+        this.remark = new Remark(remark);
+        return this;
+    }
+
+    /**
      * Builds and returns a {@code Person} object with the current attributes.
      *
      * @return A {@code Person} object with the current attributes.
      */
     public Person build() {
-        return new Person(name, phone, email, address, grades, tags);
+        return new Person(name, phone, email, address, remark, grades, tags);
     }
 
     /**
