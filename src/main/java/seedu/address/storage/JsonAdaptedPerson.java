@@ -107,18 +107,27 @@ class JsonAdaptedPerson {
         //initialise other aspect here.
 
         if (grades == null) {
-            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "Grades"));
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "Grade"));
         }
 
-        final Grade[] modelGrades = Arrays.stream(grades)
-                .map(jsonGrade -> {
-                    try {
-                        return jsonGrade.toModelType();
-                    } catch (IllegalValueException e) {
-                        throw new IllegalArgumentException(e.getMessage(), e);
-                    }
-                })
-                .toArray(Grade[]::new);
+
+        final Grade[] modelGrades;
+        try {
+            modelGrades = Arrays.stream(grades)
+                    .map(grade -> {
+                        try {
+                            return grade.toModelType();
+                        } catch (IllegalValueException e) {
+                            throw new RuntimeException(e);
+                        }
+                    })
+                    .toArray(Grade[]::new);
+        } catch (RuntimeException e) {
+            if (e.getCause() instanceof IllegalValueException) {
+                throw (IllegalValueException) e.getCause();
+            }
+            throw e;
+        }
 
         return new Person(modelName, modelPhone, modelEmail, modelAddress, modelGrades, modelTags);
 

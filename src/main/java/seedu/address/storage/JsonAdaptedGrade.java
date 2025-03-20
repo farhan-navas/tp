@@ -38,6 +38,12 @@ public class JsonAdaptedGrade {
      * @throws IllegalValueException if there were any data constraints violated in the adapted grade.
      */
     public Grade toModelType() throws IllegalValueException {
+        if (subject == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "subject"));
+        }
+        if (grade == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, "grade"));
+        }
         if (!Grade.isValidGrade(subject, grade)) {
             throw new IllegalValueException(Grade.MESSAGE_CONSTRAINTS);
         }
