@@ -9,6 +9,12 @@ import static java.util.Objects.requireNonNull;
 public class Remark {
     public final String value;
 
+    /**
+     * Constructs a {@code Remark} with the specified content.
+     *
+     * @param remark A non-null string representing the person's remark.
+     * @throws NullPointerException if the provided remark is null.
+     */
     public Remark(String remark) {
         requireNonNull(remark);
         value = remark;
