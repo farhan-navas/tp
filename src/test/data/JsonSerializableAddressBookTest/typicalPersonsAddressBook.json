@@ -43,6 +43,13 @@
     "address" : "4th street",
     "tags" : [ ]
   }, {
+    "name" : "Emily",
+    "phone" : "96778766",
+    "email" : "emily@example.com",
+    "address" : "someplace",
+    "tags" : [ "enemy" ]
+
+  }, {
     "name" : "name",
     "phone" : "12345678",
     "email" : "test@example.com",
