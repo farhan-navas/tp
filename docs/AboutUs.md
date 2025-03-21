@@ -47,5 +47,4 @@ Please contact heytheresakinah@gmail.com for any concerns and queries.
 [[portfolio](team/ypuppy.md)]
 
 * Role: Developer
-* Responsibilities: Backend + waiting for my team member to save me 
-
+* Responsibilities: Backend + waiting for my team member to save me
