@@ -17,7 +17,7 @@
 
 Example commands:<br>
 >add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 g/Math:A,Science:B,English:A,History:C,Geography:B,Music:A<br><br>
-add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 Math:A,Science:C,English:A,History:C,Geography:B,Music:A t/criminal
+add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 g/Math:A,Science:C,English:A,History:C,Geography:B,Music:A t/friend
 
 
 ### Delete Student 🗑️
