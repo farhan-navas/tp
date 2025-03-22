@@ -12,8 +12,8 @@
 
 ## Features:
 ### Add Students ✏️
-#### Adds a student with their Grade to the address book.
-`add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS g/SUBJECT1:GRADE,SUBJECT2:GARDE,... [t/TAG]...`
+#### Adds a student with their Grades to the address book.
+`add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS g/SUBJECT1:GRADE,SUBJECT2:GARDE,SUBJECT3:GARDE,SUBJECT4:GARDE,SUBJECT5:GARDE,SUBJECT6:GARDE [t/TAG]...`
 
 Example commands:<br>
 >add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 g/Math:A,Science:B,English:A,History:C,Geography:B,Music:A<br><br>
