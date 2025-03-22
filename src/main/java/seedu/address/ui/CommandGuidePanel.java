@@ -13,11 +13,13 @@ public class CommandGuidePanel extends UiPart<Region> {
     private static final String COMMAND_GUIDE_TITLE = "Command Guide";
     private static final String COMMAND_GUIDE_DESCRIPTION =
             "These are the list of commands available in the application.";
-    private static final String ADD_COMMAND = "Add a person: add n/NAME p/PHONE e/EMAIL a/ADDRESS t/TAG";
+    private static final String ADD_COMMAND =
+            "Add a person: add n/NAME p/PHONE e/EMAIL a/ADDRESS g/SUBJECT1:GRADE...SUBJECT6:GRADE [t/TAG]";
     private static final String CLEAR_COMMAND = "Clear all persons: clear";
-    private static final String DELETE_COMMAND = "Delete a person: delete INDEX";
+    private static final String DELETE_COMMAND = "Delete a person: delete INDEX1 [INDEX2 ...] ,";
     private static final String EDIT_COMMAND =
-            "Edit a person: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]";
+            "Edit a person: edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] "
+                    + "[g/SUBJECT1:GRADE...SUBJECT6:GRADE] [t/TAG]";
     private static final String EXIT_COMMAND = "Exit the application: exit";
     private static final String FIND_COMMAND = "Find persons: find KEYWORD [MORE_KEYWORDS]";
     private static final String HELP_COMMAND = "Open help window: help";
