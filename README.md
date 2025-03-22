@@ -47,6 +47,15 @@ find Betsy Crowe
 Example commands:<br>
 >filter BadAtMath<br>
 
+
+### Add Remark 📝
+`remark INDEX r/[REMARK INPUT]`
+
+Example commands:<br>
+>remark 1 r/Poor <br>
+
+
+
 ### Exit Program 🚪
 #### Terminates the application
 
