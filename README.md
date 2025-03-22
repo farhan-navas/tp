@@ -12,12 +12,12 @@
 
 ## Features:
 ### Add Students ✏️
-#### Adds a student to the address book.
-`add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]...`
+#### Adds a student with their Grade to the address book.
+`add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS g/SUBJECT1:GRADE,SUBJECT2:GARDE,... [t/TAG]...`
 
 Example commands:<br>
->add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01<br><br>
-add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal
+>add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01 g/Math:A,Science:B,English:A,History:C,Geography:B,Music:A<br><br>
+add n/Betsy Crowe e/betsycrowe@example.com a/Newgate Prison p/1234567 g/Math:A,Science:C,English:A,History:C,Geography:B,Music:A t/friend
 
 
 ### Delete Student 🗑️
@@ -27,6 +27,10 @@ Example commands:<br>
 >delete 1234<br>
 delete 98765
 
+#### Removes multiple student's record from the address book.
+`delete INDEX1 INDEX2 ...` <br>
+Example commands:<br>
+>delete 1 3 5<br>
 
 ### Find Person 🔍
 #### Searches for a person in the address book based on their name.
@@ -36,6 +40,21 @@ delete 98765
 Example commands:<br>
 >find John<br>
 find Betsy Crowe
+
+### Filter Person 🔽
+`filter KEYWORD [MORE_KEYWORDS]`
+
+Example commands:<br>
+>filter BadAtMath<br>
+
+
+### Add Remark 📝
+`remark INDEX r/[REMARK INPUT]`
+
+Example commands:<br>
+>remark 1 r/Poor <br>
+
+
 
 ### Exit Program 🚪
 #### Terminates the application
