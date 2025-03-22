@@ -41,7 +41,7 @@ Example commands:<br>
 >find John<br>
 find Betsy Crowe
 
-### Filter Person
+### Filter Person 🔽
 `filter KEYWORD [MORE_KEYWORDS]`
 
 Example commands:<br>
