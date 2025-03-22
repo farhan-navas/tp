@@ -20,7 +20,7 @@
     <Scene>
       <stylesheets>
         <URL value="@Extensions.css" />
-        <URL value="@DarkTheme.css" />
+        <URL value="@ColorTheme.css" />
       </stylesheets>
 
       <VBox VBox.vgrow="ALWAYS">
