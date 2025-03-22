@@ -35,6 +35,7 @@ public class MainWindow extends UiPart<Stage> {
     private PersonListPanel personListPanel;
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
+    private CommandGuidePanel commandGuidePanel;
 
     @FXML
     private StackPane commandBoxPlaceholder;
@@ -43,10 +44,13 @@ public class MainWindow extends UiPart<Stage> {
     private MenuItem helpMenuItem;
 
     @FXML
-    private VBox commandGuidePlaceholder;
+    private StackPane commandGuidePlaceholder;
 
     @FXML
     private StackPane personListPanelPlaceholder;
+
+    @FXML
+    private StackPane personDisplayPlaceholder;
 
     @FXML
     private StackPane resultDisplayPlaceholder;
@@ -126,8 +130,12 @@ public class MainWindow extends UiPart<Stage> {
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
 
-        CommandGuidePanel commandGuidePanel = new CommandGuidePanel();
+        commandGuidePanel = new CommandGuidePanel();
         commandGuidePlaceholder.getChildren().add(commandGuidePanel.getRoot());
+
+        // currently, the person display is a placeholder which shows
+        PersonDisplay personDisplay = new PersonDisplay();
+        personDisplayPlaceholder.getChildren().add(personDisplay.getRoot());
     }
 
     /**
@@ -169,6 +177,11 @@ public class MainWindow extends UiPart<Stage> {
         helpWindow.hide();
         primaryStage.hide();
     }
+
+    // add later
+    // @FXML
+    // private void handleSelectPerson() {
+    // }
 
     public PersonListPanel getPersonListPanel() {
         return personListPanel;

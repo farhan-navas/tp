@@ -350,3 +350,20 @@
     -fx-background-radius: 2;
     -fx-font-size: 11;
 }
+
+#commandGuidePlaceholder .cell_big_label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+#commandGuidePlaceholder Label {
+    -fx-text-fill: white;
+    -fx-padding: 0 0 5px 0;
+}
+
+#personDisplayPlaceholder Label {
+    -fx-text-fill: white;
+}
+
+

@@ -1,5 +1,6 @@
 package seedu.address.ui;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 import javafx.fxml.FXML;
@@ -14,7 +15,7 @@ import seedu.address.model.person.Person;
  * Displays on the right side panel of the application.
  */
 public class PersonDisplay extends UiPart<Region> {
-    private static final String FXML = "PersonListCard.fxml";
+    private static final String FXML = "PersonDisplay.fxml";
 
     /**
      * Note: Certain keywords such as "location" and "resources" are reserved keywords in JavaFX.
@@ -24,6 +25,7 @@ public class PersonDisplay extends UiPart<Region> {
      * @see <a href="https://github.com/se-edu/addressbook-level4/issues/336">The issue on AddressBook level 4</a>
      */
 
+    // When updating person display, call PersonDisplay constructor again with the updated person
     public final Person person;
 
     @FXML
@@ -40,6 +42,21 @@ public class PersonDisplay extends UiPart<Region> {
     private Label email;
     @FXML
     private FlowPane tags;
+    @FXML
+    private FlowPane grades;
+
+    /**
+     * Creates an empty {@code PersonCode} to display as a placeholder.
+     */
+    public PersonDisplay() {
+        super(FXML);
+        this.person = null;
+        id.setText("");
+        name.setText("Click on a person to display their full profile (Coming soon!)");
+        phone.setText("");
+        address.setText("");
+        email.setText("");
+    }
 
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
@@ -55,5 +72,7 @@ public class PersonDisplay extends UiPart<Region> {
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));
+        Arrays.stream(person.getGrades())
+                .forEach(grade -> grades.getChildren().add(new Label(grade.toString())));
     }
 }

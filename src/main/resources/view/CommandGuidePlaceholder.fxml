@@ -2,10 +2,10 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
-<VBox id="commandGuide" fx:id="commandGuide" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      alignment="TOP_LEFT" HBox.hgrow="ALWAYS">
+
+<VBox id="commandGuidePlaceholder" fx:id="commandGuidePlaceholder" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1" alignment="TOP_LEFT" HBox.hgrow="ALWAYS">
     <GridPane VBox.vgrow="ALWAYS">
         <padding>
             <Insets top="5" right="5" bottom="5" left="15" />
@@ -26,6 +26,7 @@
             <Label fx:id="findCommand" styleClass="cell_small_label" text="\$findCommand" />
             <Label fx:id="helpCommand" styleClass="cell_small_label" text="\$helpCommand" />
             <Label fx:id="listCommand" styleClass="cell_small_label" text="\$listCommand" />
+            <Label fx:id="remarkCommand" styleClass="cell_small_label" text="\$remarkCommand" />
         </VBox>
     </GridPane>
 </VBox>

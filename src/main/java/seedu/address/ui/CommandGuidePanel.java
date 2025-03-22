@@ -22,6 +22,7 @@ public class CommandGuidePanel extends UiPart<Region> {
     private static final String FIND_COMMAND = "Find persons: find KEYWORD [MORE_KEYWORDS]";
     private static final String HELP_COMMAND = "Open help window: help";
     private static final String LIST_COMMAND = "List all persons: list";
+    private static final String REMARK_COMMAND = "Edit the remark of a person: remark INDEX r/REMARK";
 
     @FXML
     private VBox commandGuidePlaceholder;
@@ -56,20 +57,29 @@ public class CommandGuidePanel extends UiPart<Region> {
     @FXML
     private Label listCommand;
 
+    @FXML
+    private Label remarkCommand;
+
     /**
      * Creates a {@code CommandGuidePlaceholder} with hardcoded commands.
      */
     public CommandGuidePanel() {
         super(FXML);
-        commandGuideTitle.setText(COMMAND_GUIDE_TITLE);
-        commandGuideDescription.setText(COMMAND_GUIDE_DESCRIPTION);
-        addCommand.setText(ADD_COMMAND);
-        clearCommand.setText(CLEAR_COMMAND);
-        deleteCommand.setText(DELETE_COMMAND);
-        editCommand.setText(EDIT_COMMAND);
-        exitCommand.setText(EXIT_COMMAND);
-        findCommand.setText(FIND_COMMAND);
-        helpCommand.setText(HELP_COMMAND);
-        listCommand.setText(LIST_COMMAND);
+        setLabelWrap(commandGuideTitle, COMMAND_GUIDE_TITLE);
+        setLabelWrap(commandGuideDescription, COMMAND_GUIDE_DESCRIPTION);
+        setLabelWrap(addCommand, ADD_COMMAND);
+        setLabelWrap(clearCommand, CLEAR_COMMAND);
+        setLabelWrap(deleteCommand, DELETE_COMMAND);
+        setLabelWrap(editCommand, EDIT_COMMAND);
+        setLabelWrap(exitCommand, EXIT_COMMAND);
+        setLabelWrap(findCommand, FIND_COMMAND);
+        setLabelWrap(helpCommand, HELP_COMMAND);
+        setLabelWrap(listCommand, LIST_COMMAND);
+        setLabelWrap(remarkCommand, REMARK_COMMAND);
+    }
+
+    private static void setLabelWrap(Label label, String title) {
+        label.setText(title);
+        label.setWrapText(true);
     }
 }
