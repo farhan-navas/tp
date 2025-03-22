@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
@@ -30,5 +27,6 @@
             <Label fx:id="address" styleClass="cell_small_label" text="$address" />
         </VBox>
         <FlowPane fx:id="tags" />
+        <FlowPane fx:id="grades" />
     </GridPane>
 </VBox>
